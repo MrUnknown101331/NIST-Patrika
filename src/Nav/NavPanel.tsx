@@ -7,6 +7,7 @@ function NavPanel() {
             <a href="#">Briefs</a>
             <a href="#">Latest</a>
             <a href="#">Top News</a>
+            <a href="#">Bad News</a>
             <a href="#">E-Magazine</a>
             <a href="#">About us</a>
         </nav>
