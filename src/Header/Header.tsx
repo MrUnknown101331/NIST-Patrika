@@ -7,16 +7,16 @@ function Header() {
 
     const currentDate = new Date();
     const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-    const date = monthKey[currentDate.getMonth()];
+    const month = monthKey[currentDate.getMonth()];
+    const date = String(currentDate.getDate()).padStart(2, '0')
     const day = dayKey[currentDate.getDay()];
 
-    const formattedDate = `${day}, ${month} ${date}, ${year}`;
+    const formattedDate = `${day}, ${date} ${month}, ${year}`;
 
     return (
         <div className={style.container}>
-            <img className={style.menuIcon} src="src/assets/menu.png" alt="menu icon"/>
-            <h1 className={style.title}>Patrika</h1>
+            <img className={style.menuIcon} src="src/assets/PatrikaLogo.png" alt="menu icon"/>
+            <h1 className={style.title}>NIST Patrika</h1>
             <h3 className={style.date}>{formattedDate}</h3>
         </div>
     )
