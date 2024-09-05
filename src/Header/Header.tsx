@@ -1,4 +1,5 @@
 import style from './Header.module.css'
+import image from '../assets/PatrikaLogo.png'
 
 function Header() {
 
@@ -15,7 +16,7 @@ function Header() {
 
     return (
         <div className={style.container}>
-            <img className={style.menuIcon} src="./public/PatrikaLogo.png" alt="Patrika icon"/>
+            <img className={style.menuIcon} src={image} alt="Patrika icon"/>
             <h1 className={style.title}>NIST Patrika</h1>
             <h3 className={style.date}>{formattedDate}</h3>
         </div>
