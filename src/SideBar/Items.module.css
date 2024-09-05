@@ -1,0 +1,25 @@
+.row{
+    border-right: 4px solid transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.row:hover{
+    background-color: #cccccc;
+    border-right: 4px solid #3684ff ;
+}
+
+.itemIcon{
+    flex: 30%;
+}
+
+.name{
+    flex: 70%;
+}
+
+h1{
+    font-size: 20px;
+}
