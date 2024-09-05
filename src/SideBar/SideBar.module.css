@@ -1,3 +1,47 @@
-.sideBar{
-    display: inline-flex;
+.sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    /* Initially hidden */
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px 5px;
 }
+
+.visible {
+    transform: translateX(0);
+}
+
+.hidden {
+    transform: translateX(-100%);
+}
+
+.menuDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menuIcon {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999; /* Make sure it's behind the sidebar but above the rest of the page */
+    cursor: pointer;
+}
+

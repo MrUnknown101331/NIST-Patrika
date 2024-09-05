@@ -2,11 +2,15 @@ import styles from './Top.module.css'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import {SvgIcon} from "@mui/material";
+import {MouseEventHandler} from 'react';
 
-function Top() {
+function Top(props: { isVisible: boolean, changeSideBarVisibility: MouseEventHandler<SVGSVGElement> | undefined; }) {
     return (
         <header className={styles.topDiv}>
-            <SvgIcon className={styles.menuIcon} component={MenuIcon} inheritViewBox/>
+            {!props.isVisible &&
+                <SvgIcon className={styles.menuIcon} component={MenuIcon} onClick={props.changeSideBarVisibility}
+                         inheritViewBox/>}
+            {props.isVisible && <div/>}
             <div className={styles.rightDiv}>
                 <div className={styles.searchDiv}>
                     <SvgIcon className={styles.searchIcon} component={SearchIcon} inheritViewBox/>
