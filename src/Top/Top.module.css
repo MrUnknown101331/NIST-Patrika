@@ -15,14 +15,14 @@
 
 .menuIcon {
     justify-self: start;
-    max-width: 30px;
+    width: 30px;
     display: inline;
     text-align: center;
     margin: 10px;
 }
 
 .searchIcon {
-    max-width: 15px;
+    max-width: 20px;
     position: absolute;
     left: 10px;
     fill: #aaa;

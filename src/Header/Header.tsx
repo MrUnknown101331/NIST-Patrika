@@ -15,7 +15,7 @@ function Header() {
 
     return (
         <div className={style.container}>
-            <img className={style.menuIcon} src="src/assets/PatrikaLogo.png" alt="menu icon"/>
+            <img className={style.menuIcon} src="./public/PatrikaLogo.png" alt="Patrika icon"/>
             <h1 className={style.title}>NIST Patrika</h1>
             <h3 className={style.date}>{formattedDate}</h3>
         </div>
