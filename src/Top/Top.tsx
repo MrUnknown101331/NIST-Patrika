@@ -4,7 +4,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {SvgIcon} from "@mui/material";
 import {MouseEventHandler} from 'react';
 
-function Top(props: { isVisible: boolean, changeSideBarVisibility: MouseEventHandler<SVGSVGElement> | undefined; }) {
+function Top(props: {
+    isVisible: boolean,
+    changeSideBarVisibility: MouseEventHandler,
+    changeLoginVisibility: MouseEventHandler
+}) {
     return (
         <header className={styles.topDiv}>
             {!props.isVisible &&
@@ -16,7 +20,7 @@ function Top(props: { isVisible: boolean, changeSideBarVisibility: MouseEventHan
                     <SvgIcon className={styles.searchIcon} component={SearchIcon} inheritViewBox/>
                     <input className={styles.searchBar} type="text" placeholder="Search..."/>
                 </div>
-                <button className={styles.loginButton}>Login / SignUp</button>
+                <button className={styles.loginButton} onClick={props.changeLoginVisibility}>Login / SignUp</button>
             </div>
         </header>
     );
