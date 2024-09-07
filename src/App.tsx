@@ -4,6 +4,7 @@ import Top from "./Top/Top.tsx";
 import SideBar from "./SideBar/SideBar.tsx";
 import {useState, useEffect} from "react";
 import Login from "./Login/Login.tsx";
+import Home from "./Home/Home.tsx";
 
 function App() {
     const [isSideBarVisible, setIsSideBarVisible] = useState(false);
@@ -36,6 +37,7 @@ function App() {
                  changeLoginVisibility={changeLoginVisibility}/>
             <Header/>
             <NavPanel/>
+            <Home/>
         </>
     );
 }
