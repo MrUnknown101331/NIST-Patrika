@@ -7,7 +7,7 @@ function Latest() {
     const newsData = getNews(n);
 
     return (
-        <div className={styles.home}>
+        <section className={styles.home} id="latestNews">
             {
                 newsData.map((news, index) => (
                 <NewsCard
@@ -19,7 +19,7 @@ function Latest() {
                 />
             ))
             }
-        </div>
+        </section>
     );
 }
 

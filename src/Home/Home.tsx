@@ -7,7 +7,7 @@ function Home() {
     const newsData = getNews(n);
 
     return (
-        <div className={styles.home}>
+        <section className={styles.home} id="home">
             {
                 newsData.map((news, index) => (
                 <NewsCard
@@ -19,7 +19,7 @@ function Home() {
                 />
             ))
             }
-        </div>
+        </section>
     );
 }
 

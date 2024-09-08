@@ -1,10 +1,11 @@
 import styles from './NavPanel.module.css'
 
 function NavPanel() {
+
     return (
         <nav className={styles.navLine}>
-            <a href="#">Home</a>
-            <a href="#">Latest Issues</a>
+            <a href="#home">Home</a>
+            <a href="#latestNews">Latest Issues</a>
             <a href="#">Club Activities</a>
             <a href="#">Upcoming Events</a>
             <a href="#">Photos & Videos</a>

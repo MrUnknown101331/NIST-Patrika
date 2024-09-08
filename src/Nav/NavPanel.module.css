@@ -3,15 +3,22 @@
     justify-content: center;
     background-color: #C70039;
     padding: 10px;
+    position: sticky;
+    top: 39px;
+    z-index: 3;
 }
 
-nav a {
+.navLine a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
 }
 
-nav a:hover {
+.navLine a:hover {
+    background-color: #FF5733;
+}
+
+.selected{
     background-color: #FF5733;
 }

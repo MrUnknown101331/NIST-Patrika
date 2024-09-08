@@ -5,6 +5,7 @@ import SideBar from "./SideBar/SideBar.tsx";
 import {useState, useEffect} from "react";
 import Login from "./Login/Login.tsx";
 import Home from "./Home/Home.tsx";
+import Latest from "./Latest/Latest.tsx";
 
 function App() {
     const [isSideBarVisible, setIsSideBarVisible] = useState(false);
@@ -38,6 +39,7 @@ function App() {
             <Header/>
             <NavPanel/>
             <Home/>
+            <Latest/>
         </>
     );
 }
