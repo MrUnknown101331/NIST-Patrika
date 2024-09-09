@@ -6,6 +6,7 @@ import {useState, useEffect} from "react";
 import Login from "./Login/Login.tsx";
 import Home from "./Home/Home.tsx";
 import Latest from "./Latest/Latest.tsx";
+import ClubAct from "./ClubActivities/ClubAct.tsx";
 
 function App() {
     const [isSideBarVisible, setIsSideBarVisible] = useState(false);
@@ -30,7 +31,7 @@ function App() {
         };
     }, [isSideBarVisible, isLoginVisible]);
 
-    const sections = ['#home', '#latestNews']
+    const sections = ['#home', '#latestNews', '#clubAct']
     const [activeHash, setActiveHash] = useState("");
 
     useEffect(() => {
@@ -62,6 +63,7 @@ function App() {
             <NavPanel activeHash={activeHash}/>
             <Home/>
             <Latest/>
+            <ClubAct/>
         </>
     );
 }

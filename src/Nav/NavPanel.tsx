@@ -6,7 +6,7 @@ function NavPanel(props: { activeHash: string; }) {
         <nav className={styles.navLine}>
             <a href="#home" className={props.activeHash === '#home' ? styles.selected : ""}>Home</a>
             <a href="#latestNews" className={props.activeHash === '#latestNews' ? styles.selected : ""}>Latest Issues</a>
-            <a href="#">Club Activities</a>
+            <a href="#clubAct" className={props.activeHash === '#clubAct' ? styles.selected : ""}>Club Activities</a>
             <a href="#">Upcoming Events</a>
             <a href="#">Photos & Videos</a>
             <a href="#">E-Magazine</a>

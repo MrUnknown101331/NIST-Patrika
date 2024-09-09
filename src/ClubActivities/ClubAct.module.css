@@ -1,0 +1,14 @@
+.clubActivities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    color: #393939;
+}

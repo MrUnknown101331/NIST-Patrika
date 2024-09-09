@@ -10,4 +10,5 @@ html.no-scroll, body.no-scroll {
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 99px;
 }
