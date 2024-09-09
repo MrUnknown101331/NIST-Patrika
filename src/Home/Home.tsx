@@ -1,15 +1,13 @@
 import styles from "./Home.module.css";
 import getNews from "../assets/getNews.ts";
 import NewsCard from "../NewsCard/NewsCard.tsx";
-import {forwardRef} from "react";
 
-// Add both props and ref to the function signature
-const Home = forwardRef((_props, ref) => {
+function Home() {
     const n = 10;
     const newsData = getNews(n);
 
     return (
-        <section className={styles.home} id="home" ref={ref}>
+        <section className={styles.home} id="home">
             {
                 newsData.map((news, index) => (
                     <NewsCard
@@ -23,6 +21,6 @@ const Home = forwardRef((_props, ref) => {
             }
         </section>
     );
-});
+}
 
 export default Home;

@@ -2,7 +2,7 @@ import Header from "./Header/Header.tsx";
 import NavPanel from "./Nav/NavPanel.tsx";
 import Top from "./Top/Top.tsx";
 import SideBar from "./SideBar/SideBar.tsx";
-import {useState, useEffect, useRef} from "react";
+import {useState, useEffect} from "react";
 import Login from "./Login/Login.tsx";
 import Home from "./Home/Home.tsx";
 import Latest from "./Latest/Latest.tsx";
@@ -30,16 +30,26 @@ function App() {
         };
     }, [isSideBarVisible, isLoginVisible]);
 
-    const myRef = useRef();
-    const [isHomeVisible, setIsHomeVisible] = useState(false);
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            const entry = entries[0];
-            setIsHomeVisible(entry.isIntersecting)
+    const sections = ['#home', '#latestNews']
+    const [activeHash, setActiveHash] = useState("");
 
-        })
-        // @ts-ignore
-        observer.observe(myRef.current)
+    useEffect(() => {
+        const handleIntersection = (entries: any[]) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveHash(`#${entry.target.id}`);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, {
+            threshold: 0.3,
+        });
+
+        sections.forEach((section) => {
+            const target = document.querySelector(section);
+            if (target) observer.observe(target);
+        });
     }, []);
 
     return (
@@ -49,8 +59,8 @@ function App() {
             <Top isVisible={isSideBarVisible} changeSideBarVisibility={changeVisibility}
                  changeLoginVisibility={changeLoginVisibility}/>
             <Header/>
-            <NavPanel isHomeVisible={isHomeVisible}/>
-            <Home ref={myRef}/>
+            <NavPanel activeHash={activeHash}/>
+            <Home/>
             <Latest/>
         </>
     );
