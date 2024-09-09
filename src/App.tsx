@@ -2,7 +2,7 @@ import Header from "./Header/Header.tsx";
 import NavPanel from "./Nav/NavPanel.tsx";
 import Top from "./Top/Top.tsx";
 import SideBar from "./SideBar/SideBar.tsx";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import Login from "./Login/Login.tsx";
 import Home from "./Home/Home.tsx";
 import Latest from "./Latest/Latest.tsx";
@@ -30,6 +30,18 @@ function App() {
         };
     }, [isSideBarVisible, isLoginVisible]);
 
+    const myRef = useRef();
+    const [isHomeVisible, setIsHomeVisible] = useState(false);
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            setIsHomeVisible(entry.isIntersecting)
+
+        })
+        // @ts-ignore
+        observer.observe(myRef.current)
+    }, []);
+
     return (
         <>
             <SideBar isVisible={isSideBarVisible} changeSideBarVisibility={changeVisibility}/>
@@ -37,11 +49,11 @@ function App() {
             <Top isVisible={isSideBarVisible} changeSideBarVisibility={changeVisibility}
                  changeLoginVisibility={changeLoginVisibility}/>
             <Header/>
-            <NavPanel/>
-            <Home/>
+            <NavPanel isHomeVisible={isHomeVisible}/>
+            <Home ref={myRef}/>
             <Latest/>
         </>
     );
 }
 
-export default App;
+export default App
