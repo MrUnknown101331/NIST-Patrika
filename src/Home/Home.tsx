@@ -16,6 +16,7 @@ function Home() {
                         title={news.title}
                         description={news.desc}
                         link={news.url}
+                        theme="light"
                     />
                 ))
             }

@@ -1,0 +1,21 @@
+/* DarkMode.module.css */
+
+.card {
+    background: linear-gradient(135deg, #333, #444); /* Dark background */
+    border: 1px solid #666;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1),
+    0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2),
+    0 12px 40px rgba(255, 255, 255, 0.3);
+}
+
+.title {
+    color: #f1f1f1;
+}
+
+.description {
+    color: #bbbbbb;
+}
