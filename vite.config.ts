@@ -6,10 +6,3 @@ export default defineConfig({
     base: '/learnreact/',
     plugins: [react()],
 })
-
-
-
-
-
-
-
